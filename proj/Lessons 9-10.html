@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<title>Изучаем библиотеку JQuery</title>
+	<script type="text/javascript">
+	//Добавление html-тегов; Show
+			function valid() {
+				var state = $("input[name='sex']:checked").val();
+				if(!state) 
+					return $("#message").html("<font style='color:red'>Specify your sex</font><br/>");
+				
+				alert(state);
+				if(state == "male")
+					$("#img").show();
+			}
+	</script>
+<head>
+<body>
+	
+	<form name="form" id="form">
+		<label for="female">Female</label>
+		<input type="radio" id="female" name="sex" value="female"/>
+		<label for="male">Male</label>
+		<input type="radio" id="male" name="sex" value="male"/>
+		<br/><br/>
+		<span id="message"></span>
+		<input type="button" id="submit" value="submit" onclick="valid()">
+		<img src="1.jpg" style="display:none" id="img"/>
+	</form>
+	
+</body>
+</html>

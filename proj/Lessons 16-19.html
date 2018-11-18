@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<title>Изучаем библиотеку JQuery</title>	
+<head>
+<body>
+	
+	<div id="text-div3" style="background-color: red">Text3</div>
+	
+	<img src="1.png"/><br/>
+	<img src="2.png"/><br/>
+	<img src="3.png"/>
+	
+	<label>aaa </label>
+	<label>bbb </label>
+	<label>ccc </label>
+	<label>ddd </label>
+	
+	<script>
+		//appendTo: нашли все теги "img" и вставили их в тег с id "text-div3".
+		$("img").appendTo($("#text-div3"));
+		
+		//prependTo: Аналогичный метод, только добавляет в начало а не в конец.
+		//$("img").prependTo($("#text-div3"));
+		
+		//wrap: Оборачиваем все теги "label" тегом со свойством "не отображать"
+		$("label").wrap("<div style='display:none'></div>")
+	</script>
+	
+	
+	<label id="test-label1">111 </label>
+	<label id="test-label2">222 </label>
+	
+	<script>
+		//insertBefore: Вставляет код перед найденным тегом.
+		$("<label id='test-label4'>444 </label>").insertBefore($("#test-label2"));
+		$("<label id='test-label5'>555 </label>").insertAfter($("#test-label2"));
+	</script>
+	
+</body>
+</html>

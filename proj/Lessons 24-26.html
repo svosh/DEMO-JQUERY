@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<title>Изучаем библиотеку JQuery</title>
+	<script type="text/javascript">
+			$(document).ready(function() {
+				$("#img").bind("click", function(event) {
+					var targetElement = $(event.target);
+					//parent() - обращение в родительскому тегу
+					targetElement.parent().css("text-align","center");
+					//animate() - выполнение какой-то функции в течении определенного времени
+					targetElement.animate({
+						width: targetElement.width()*5,
+						height: targetElement.height()*5,						
+					}, 3000);			
+				});
+			});
+	</script>
+<head>
+<body>
+
+	<div id="test">
+		<img id="img" title="Image" width="200" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0WUXFOZVNV8-T1gl0tuGMdV-WRSpC4XrqKOPvZNGe05hOeKDM"/>
+	</div>
+	
+</body>
+</html>

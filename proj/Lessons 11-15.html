@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<title>Изучаем библиотеку JQuery</title>	
+	<style>
+	.div_1{
+		background-color: #e07474;
+	}
+	
+	.div_2{
+		background-color: #b7f5a2;
+	}
+	</style>
+<head>
+<body>
+	
+	<img src="1.jpg" alt="Image" title="Image" /> <br/>
+	<img src="2.jpg"/> <br/>
+	<img src="3.jpg"/> <br/>
+	<img src="4.jpg" alt="Image" title="Image" /> 
+	
+	<script type="text/javascript">
+		//Нахождение от отрицанию (НЕ является, НЕ содержит). Заполнение атрибутов.
+		$(":not(img[alt])").attr("alt","Added Image");
+	</script>
+	
+	<div id="text-div">Text</div>
+	
+	<script type="text/javascript">
+		//prompt. Заполнение атрибута стиля:
+		var div = prompt("1 or 2?");
+		while(div !=1 && div !=2) {
+			alert("wrong dig");
+			var div = prompt("1 or 2?");
+		}
+		$("#text-div").attr("class","div_"+div);		
+	</script>
+	
+	<br/>
+	<div id="text-div2">Text2</div>
+	<script>
+		//Работа с CSS через JQuery:
+		$("#text-div2").css("front-size", "25px");
+		$("#text-div2").css("clolor", "red");
+		$("#text-div2").css("background-color", "#b7f5a2");
+		
+		$("#text-div2").css("width", "250px");
+		//Влоэенные функции:
+		$("#text-div2").css("height", function() {
+			return $(this).width();
+		});
+		
+	</script>
+	
+	<div id="text-div3" style="background-color: red">Text3</div>
+	<script>
+		//clone + append
+		var newDiv = $("#text-div3").clone();
+		newDiv.css("background-color", "#b7f5a2");
+		$("body").append(newDiv);
+		
+	</script>
+	
+</body>
+</html>

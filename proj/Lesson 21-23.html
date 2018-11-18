@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<title>Изучаем библиотеку JQuery</title>
+	<script type="text/javascript">
+			$(document).ready(function() {
+				//Привязка функции к событию "при нажатии" (разница от "bind" в том, что "on" рабоатет с контентом, который обновляется после загрузки кода страницы)
+				$(document).on("click", "#add-comment", function() {
+					//"show" и "hide" принимают параметры:
+					// 1 - таймаут (если передать значение в течении этого времени будет выполняться действие)
+					// 2 - вложенная функция - действие, которые выполнится после выполнения(или во время?)
+					$("#form").show(1000);
+					$("#add-comment").hide(1000);
+				});
+				
+				$(document).on("click", "input[name='submit']", function() {
+					var newComment = $("#textarea").val();
+					alert("Loading...")
+					$("<p>"+newComment+"</p>").appendTo($("#comment-place"));
+					$("#form").hide(1000);
+					$("#add-comment").show(1000);
+				});
+			});
+	</script>
+<head>
+<body>
+
+	<div id="comment-place">
+		<p>Comment #1</p>
+		<p>Comment #2</p>
+		<p>Comment #3</p>
+	</div>
+	
+	<form id="form" action="#" method="post" name="form" style="display:none" onsubmit="return false">
+		<textarea id="textarea" name="textarea"></textarea>
+		<input type="submit" value="Welcome" id="submit" name="submit">
+	</form>
+	
+	<a href="#" onclick="false" id="add-comment">Add your comment</a>
+	
+</body>
+</html>

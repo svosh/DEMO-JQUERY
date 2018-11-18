@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<title>Изучаем библиотеку JQuery</title>	
+	
+	<script>
+		function incSize(event) {
+			//"bind" передает в "привязанный" метод параметр "event" - подробности события:			
+			var current_width = Number(event.target.style.width.replace("px",""));
+			event.target.style.width = (current_width+5)+"px";
+			// Координаты клика:
+			alert("x/y: " + event.screenX +"/"+ event.screenY);
+		}
+	
+		//ready: страница загружена	
+		$(document).ready(function() {
+			// bind - привязать событие: Для всех тегов "div" привязываетм метод "incSize" на србытие "click"
+			$("div").bind("click", incSize)
+		});
+	</script>
+<head>
+<body>
+	
+	<div style="height: 50px; width: 50px; background-color: red"></div>
+	<div style="height: 50px; width: 50px; background-color: blue"></div>
+	<div style="height: 50px; width: 50px; background-color: green"></div>
+	
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<title>Изучаем библиотеку JQuery</title>
+<head>
+<body>
+	<div class="test">Test1</div>
+	<div class="test">Test2</div>
+	<div class="test">Test3</div>
+	<div class="test">Test4</div>
+	<div class="test">Test5</div>
+	
+	<img src="1.jpg" alt="1"/>
+	<img src="2.jpg" alt="2" title="2"/>
+	
+	<ul id="menu">
+		<li><a href="">Link1</a></li>
+		<li><a href="">Link2</a></li>
+		<li><a href="">Link3</a></li>
+		<li><a href="">Link4</a></li>
+		<li><a href="">Link5</a></li>		
+	</ul>
+	<li><a href="">Link6</a></li>
+	
+	<script type="text/javascript">
+		//Поиск по классу
+		var test = $('.test');
+		alert(test.length);
+		
+		//Поиск по тегу и наличию атрибута
+		var img = $("img[title]");
+		alert(img.length);
+		
+	</script>
+	
+	<script type="text/javascript">
+		// Использование псевдо-класса для поиска в подчиненному теге по условию (1-е вхождение):	
+		var link = $("#menu li a:eq(0)");
+		alert(link.html());
+	</script>
+	
+</body>
+</html>
